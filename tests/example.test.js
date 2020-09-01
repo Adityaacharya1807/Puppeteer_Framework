@@ -8,7 +8,7 @@ describe("Automation Test for Zero Web App", () => {
     let loginpage
 
     beforeAll(async () =>{
-        jest.setTimeout(15000)
+        jest.setTimeout(35000)
         homepage= new Homepage()
         topbar= new Topbar()
         loginpage=new Loginpage()
@@ -21,11 +21,10 @@ describe("Automation Test for Zero Web App", () => {
         await topbar.isTopbarDisplayed()
      })
      it("homepage should be clicked.", async () => {
-        await homepage.clickHomepageButton()
         await homepage.clickBankingButton()
      })
      it("Login page", async () => {
-         await loginpage.visit()
+        await loginpage.visit()
         await loginpage.isloginFormDisplayed()
         await loginpage.userLogin('admin','123456')
         
