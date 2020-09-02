@@ -35,6 +35,8 @@ describe("Automation Test for Zero Web App", () => {
          await loginpage.visit()
          await loginpage.isloginFormDisplayed()
          await loginpage.userLogin('admin','123456')
+         const metrics= await page.evaluate(() => JSON.stringify(window.performance))
+         console.log(metrics)
         
       })
 
